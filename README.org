@@ -1,0 +1,11 @@
+* Calorie Calulator for Runner
+** This our group member list:
+- Ziyan Long
+- Junshan Luo
+- Pengyun Fei
+
+** We plan to develop a Calorie calulator for runner.
+*** App function:
+1. Calculate how much calorie need to expend a day according to gender/weight/height.
+1. Use GPS to calualte how far the runner has been. And it give distance the runner remains.
+1. If the runner moves faster than normal running, the app will give a alert that don't use it in car or transportation.
