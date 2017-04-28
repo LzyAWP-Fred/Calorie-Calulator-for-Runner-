@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
 
     <TextView
         android:id="@+id/textName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editName"
+        android:layout_alignBottom="@+id/editName"
+        android:layout_marginEnd="24dp"
+        android:layout_toStartOf="@+id/editName"
         android:text="@string/name"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="18sp"
+        tools:ignore="RelativeOverlap" />
 
     <EditText
         android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="@string/name_hint"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="2dp" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
         android:text="@string/weight"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="70dp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/editName"
+        android:layout_toStartOf="@+id/editWeight" />
 
     <EditText
         android:id="@+id/editWeight"
@@ -40,69 +44,75 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/weight_hint"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="58dp" />
+        android:inputType=""
+        android:layout_alignBaseline="@+id/textWeight"
+        android:layout_alignBottom="@+id/textWeight"
+        android:layout_alignStart="@+id/editName"
+        tools:ignore="TextFields" />
 
     <TextView
         android:id="@+id/textCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textWeight"
+        android:layout_below="@+id/textWeight"
+        android:layout_marginTop="31dp"
         android:text="@string/cal"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="121dp" />
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editWeight"
+        android:layout_below="@+id/textCal"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="163dp" />
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textCalUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editCal"
+        android:layout_toEndOf="@+id/editCal"
         android:text="@string/cal_unit"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="452dp"
-        tools:layout_editor_absoluteY="175dp" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textCal"
+        android:layout_below="@+id/editCal"
+        android:layout_marginTop="52dp"
         android:text="@string/expect_speed"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="233dp" />
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editCal"
+        android:layout_below="@+id/textSpeed"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="281dp" />
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textSpeedUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editSpeed"
+        android:layout_toEndOf="@+id/editSpeed"
         android:text="@string/speed_unit"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="451dp"
-        tools:layout_editor_absoluteY="294dp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/buttonRun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/run"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="455dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/run" />
+</RelativeLayout>
