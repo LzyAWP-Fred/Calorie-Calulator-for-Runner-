@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Calorie-Calulator-for-Runner</string>
+    <string name="name">Name:</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="weight">Weight (kg):</string>
+    <string name="weight_hint">Enter your weight (kg)</string>
+    <string name="cal">Enter expected consume calories:</string>
+    <string name="cal_unit">Cal</string>
+    <string name="expect_speed">Expected speed (m/s):</string>
+    <string name="speed_unit">m/s</string>
+    <string name="run">Run!</string>
 </resources>
