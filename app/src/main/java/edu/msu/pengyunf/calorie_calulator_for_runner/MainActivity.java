@@ -20,9 +20,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,RunActivity.class);
 
         EditText name = (EditText) findViewById(R.id.editName);
-        EditText weight = (EditText) findViewById(R.id.editWeight);
+        double weight = Double.parseDouble(((EditText) findViewById(R.id.editWeight)).getText().toString());
         EditText cal = (EditText) findViewById(R.id.editCal);
         EditText speed = (EditText) findViewById(R.id.editSpeed);
+
+        intent.putExtra("user_weight",weight);
         startActivity(intent);
 
     }

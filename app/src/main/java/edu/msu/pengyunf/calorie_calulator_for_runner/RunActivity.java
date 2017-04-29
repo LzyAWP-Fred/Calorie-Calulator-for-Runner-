@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -19,7 +20,9 @@ public class RunActivity extends AppCompatActivity {
     private double inital_latitude = 0;
     private double inital_longitude = 0;
     private float[] distance = new float[1];
+    private double cal = 0;
     private Location location;
+    private double user_enter_weight = 0;
     private LocationManager locationManager = null;
 
     private ActiveListener activeListener = new ActiveListener();
@@ -35,6 +38,7 @@ public class RunActivity extends AppCompatActivity {
         // Force the screen to say on and bright
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+
         distance[0] = 0;
         registerListeners();
         setUI();
@@ -46,9 +50,11 @@ public class RunActivity extends AppCompatActivity {
         TextView lat = (TextView)findViewById(R.id.textLat);
         TextView log = (TextView)findViewById(R.id.textLong);
         TextView dis = (TextView)findViewById(R.id.textDistance);
+        TextView caltext = (TextView)findViewById(R.id.textcalutedcal);
         lat.setText(String.valueOf(inital_latitude));
         log.setText(String.valueOf(inital_longitude));
         dis.setText(String.valueOf(distance[0]));
+        caltext.setText(String.valueOf(cal));
     }
 
     @Override
@@ -74,6 +80,12 @@ public class RunActivity extends AppCompatActivity {
         result[0] = 0;
         Location.distanceBetween(inital_latitude,inital_longitude,latitude,longitude,result);
         return result;
+    }
+    private double calculateCal()
+    {
+        user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
+        System.out.println(user_enter_weight);
+        return 0.001*distance[0]*user_enter_weight*1.036;
     }
 
     private void registerListeners() {
@@ -129,6 +141,8 @@ public class RunActivity extends AppCompatActivity {
                 inital_latitude = latitude;
             }
             distance[0] += calculateDistance()[0];
+            cal += calculateCal();
+            System.out.println(cal);
             setUI();
             System.out.println("location changed: latitude is " + latitude  + ", longitude is " + longitude);
             //do distance calculate here
