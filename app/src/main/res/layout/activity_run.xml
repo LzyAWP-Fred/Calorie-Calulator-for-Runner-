@@ -4,16 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.RunActivity">'
+    tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.RunActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textLat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="81dp"
-        android:text="TextView" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/dummy" />
+
+    <TextView
+        android:id="@+id/textLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textLat"
+        android:layout_below="@+id/textLat"
+        android:layout_marginTop="20dp"
+        android:text="@string/dummy" />
+
+    <TextView
+        android:id="@+id/textDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textLong"
+        android:layout_below="@+id/textLong"
+        android:layout_marginTop="37dp"
+        android:text="@string/dummy" />
 </RelativeLayout>
 

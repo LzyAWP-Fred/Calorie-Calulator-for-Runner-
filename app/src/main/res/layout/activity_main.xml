@@ -112,8 +112,8 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
         android:id="@+id/buttonRun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:onClick="onRun"
-        android:text="@string/run" />
+        android:text="@string/run"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
