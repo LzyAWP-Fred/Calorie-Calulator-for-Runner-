@@ -84,7 +84,6 @@ public class RunActivity extends AppCompatActivity {
     private double calculateCal()
     {
         user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
-        System.out.println(user_enter_weight);
         return 0.001*distance[0]*user_enter_weight*1.036;
     }
 
@@ -142,7 +141,6 @@ public class RunActivity extends AppCompatActivity {
             }
             distance[0] += calculateDistance()[0];
             cal += calculateCal();
-            System.out.println(cal);
             setUI();
             System.out.println("location changed: latitude is " + latitude  + ", longitude is " + longitude);
             //do distance calculate here
