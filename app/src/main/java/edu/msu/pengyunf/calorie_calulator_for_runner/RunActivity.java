@@ -55,6 +55,7 @@ public class RunActivity extends AppCompatActivity {
         criteria.setSpeedRequired(false);
         criteria.setCostAllowed(false);
 
+
         String bestAvailable = locationManager.getBestProvider(criteria, true);
 
         if(bestAvailable != null) {
