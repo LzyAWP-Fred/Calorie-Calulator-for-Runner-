@@ -1,15 +1,21 @@
 package edu.msu.pengyunf.calorie_calulator_for_runner;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -27,6 +33,8 @@ public class RunActivity extends AppCompatActivity {
 
     private ActiveListener activeListener = new ActiveListener();
 
+    private double speed = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +51,9 @@ public class RunActivity extends AppCompatActivity {
         registerListeners();
         setUI();
 
-
     }
+
+
     private void setUI()
     {
         TextView lat = (TextView)findViewById(R.id.textLat);
@@ -130,20 +139,29 @@ public class RunActivity extends AppCompatActivity {
 
         @Override
         public void onLocationChanged(Location location) {
-            inital_latitude = latitude;
-            inital_longitude = longitude;
-            latitude = location.getLatitude();
-            longitude = location.getLongitude();
-            if(inital_longitude == 0.0 && inital_latitude==0.0)
-            {
-                inital_longitude = longitude;
+
+            Log.d("speed",String.valueOf(location.getSpeed()));
+            if (checkCheating(location.getSpeed())) {
                 inital_latitude = latitude;
+                inital_longitude = longitude;
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
+                if(inital_longitude == 0.0 && inital_latitude==0.0)
+                {
+                    inital_longitude = longitude;
+                    inital_latitude = latitude;
+                }
+                distance[0] += calculateDistance()[0];
+
+                cal += calculateCal();
+                setUI();
+                System.out.println("location changed: latitude is " + latitude  + ", longitude is " + longitude);
+                System.out.println("Cal" + cal  + ", distance " + distance[0]);
+                //do distance calculate here
+
+            } else {
+                Toast.makeText(getApplicationContext(), "PLEASE DO NOT USE THIS APP WHILE NOT RUNNING", Toast.LENGTH_SHORT).show();
             }
-            distance[0] += calculateDistance()[0];
-            cal += calculateCal();
-            setUI();
-            System.out.println("location changed: latitude is " + latitude  + ", longitude is " + longitude);
-            //do distance calculate here
 
 
         }
@@ -161,6 +179,18 @@ public class RunActivity extends AppCompatActivity {
         @Override
         public void onProviderDisabled(String provider) {
             registerListeners();
+        }
+    }
+
+    // check if you are cheating. and stop recording
+    // 12.5171m/s
+    // Famous runner, Usain Bolt has been clocked at over 28mph
+
+    private boolean checkCheating(float speed) {
+        if (speed > 12) {
+            return false;
+        } else {
+            return true;
         }
     }
 

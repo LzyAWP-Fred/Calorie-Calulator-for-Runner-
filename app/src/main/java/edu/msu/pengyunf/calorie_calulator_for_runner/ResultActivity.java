@@ -10,4 +10,13 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
     }
+
+    // Say: you are finished!!!
+
+    // Say: have used xxxx Calorie
+
+    // Say: you have ran xxxx meters.
+
+    // Say: Wish you have healthy body
+
 }
