@@ -6,5 +6,70 @@
     android:layout_height="match_parent"
     tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.ResultActivity">'
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gongxi"
+            android:gravity="center"
+            android:textSize="38dp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_marginTop="21dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/finish"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/nameee"
+            android:layout_marginTop="21dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_marginTop="21dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/runn" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="22dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_marginTop="21dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/use" />
+
+        <TextView
+            android:id="@+id/cal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="22dp"
+            android:gravity="center"/>
+    </LinearLayout>
 </RelativeLayout>
 

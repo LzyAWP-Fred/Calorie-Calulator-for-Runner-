@@ -10,4 +10,8 @@
     <string name="speed_unit">m/s</string>
     <string name="run">Run!</string>
     <string name="dummy">Dummy</string>
+    <string name="gongxi">Good Job!!!</string>
+    <string name="finish">You finished your plan!</string>
+    <string name="runn">You ran</string>
+    <string name="use">And used </string>
 </resources>

@@ -2,6 +2,7 @@ package edu.msu.pengyunf.calorie_calulator_for_runner;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -15,6 +16,12 @@ public class ResultActivity extends AppCompatActivity {
         username = getIntent().getStringExtra("userr");
         Cal = getIntent().getDoubleExtra("call",0);
         distance = getIntent().getFloatExtra("distancee",0);
+        TextView namee = (TextView)findViewById(R.id.nameee);
+        namee.setText("Dear " + username);
+        TextView call = (TextView)findViewById(R.id.cal);
+        call.setText(String.valueOf(Cal + " Cal"));
+        TextView dis = (TextView)findViewById(R.id.distance);
+        dis.setText(String.valueOf(distance + " m"));
         System.out.println("fffff" + username + Cal + distance);
 
 
