@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -30,6 +31,8 @@ public class RunActivity extends AppCompatActivity {
     private Location location;
     private double user_enter_weight = 0;
     private LocationManager locationManager = null;
+    private double goalCal = 0;
+    private String username = "";
 
     private ActiveListener activeListener = new ActiveListener();
 
@@ -45,7 +48,9 @@ public class RunActivity extends AppCompatActivity {
 
         // Force the screen to say on and bright
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
+        goalCal = getIntent().getDoubleExtra("cal",0);
+        username = getIntent().getStringExtra("user");
+        System.out.println("callll" + username);
 
         distance[0] = 0;
         registerListeners();
@@ -140,6 +145,7 @@ public class RunActivity extends AppCompatActivity {
         @Override
         public void onLocationChanged(Location location) {
 
+            System.out.println("time::" + location.getTime());
             Log.d("speed",String.valueOf(location.getSpeed()));
             if (checkCheating(location.getSpeed())) {
                 inital_latitude = latitude;
@@ -161,6 +167,17 @@ public class RunActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(getApplicationContext(), "PLEASE DO NOT USE THIS APP WHILE NOT RUNNING", Toast.LENGTH_SHORT).show();
+            }
+
+            System.out.println("Cal: " + cal + " goal cal: " + goalCal);
+            if (finish(cal, goalCal)) {
+                Intent k = new Intent(RunActivity.this,ResultActivity.class);
+                k.putExtra("distancee",distance[0]);
+                k.putExtra("call",cal);
+                //k.putExtra("timee",location.getTime());
+                k.putExtra("userr",username);
+
+                startActivity(k);
             }
 
 
@@ -187,10 +204,18 @@ public class RunActivity extends AppCompatActivity {
     // Famous runner, Usain Bolt has been clocked at over 28mph
 
     private boolean checkCheating(float speed) {
-        if (speed > 12) {
+        if (speed > 8) {
             return false;
         } else {
             return true;
+        }
+    }
+
+    private boolean finish(double cal, double goalCal) {
+        if (cal >= goalCal) {
+            return true;
+        } else {
+            return false;
         }
     }
 

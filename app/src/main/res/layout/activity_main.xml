@@ -6,114 +6,119 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editName"
-        android:layout_alignBottom="@+id/editName"
-        android:layout_marginEnd="24dp"
-        android:layout_toStartOf="@+id/editName"
-        android:text="@string/name"
-        android:textSize="18sp"
-        tools:ignore="RelativeOverlap" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
 
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="@string/name_hint"
-        android:inputType="textPersonName" />
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editName"
+            android:layout_alignBottom="@+id/editName"
+            android:layout_marginEnd="24dp"
+            android:layout_toStartOf="@+id/editName"
+            android:text="@string/name"
+            android:textSize="18sp"
+            tools:ignore="RelativeOverlap" />
 
-    <TextView
-        android:id="@+id/textWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:text="@string/weight"
-        android:textSize="18sp"
-        android:layout_below="@+id/editName"
-        android:layout_toStartOf="@+id/editWeight" />
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/name_hint"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/weight_hint"
-        android:inputType=""
-        android:layout_alignBaseline="@+id/textWeight"
-        android:layout_alignBottom="@+id/textWeight"
-        android:layout_alignStart="@+id/editName"
-        tools:ignore="TextFields" />
+        <TextView
+            android:id="@+id/textCal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textWeight"
+            android:layout_below="@+id/textWeight"
+            android:layout_marginTop="31dp"
+            android:text="@string/cal"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textCal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textWeight"
-        android:layout_below="@+id/textWeight"
-        android:layout_marginTop="31dp"
-        android:text="@string/cal"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/editCal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cal_unit"
+            android:layout_alignStart="@+id/editWeight"
+            android:layout_below="@+id/textCal"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="LabelFor" />
 
-    <EditText
-        android:id="@+id/editCal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editWeight"
-        android:layout_below="@+id/textCal"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
+        <TextView
+            android:id="@+id/textWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editName"
+            android:layout_marginTop="21dp"
+            android:layout_toStartOf="@+id/editWeight"
+            android:text="@string/weight"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textCalUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editCal"
-        android:layout_toEndOf="@+id/editCal"
-        android:text="@string/cal_unit"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textWeight"
+            android:layout_alignBottom="@+id/textWeight"
+            android:layout_alignStart="@+id/editName"
+            android:ems="10"
+            android:hint="@string/weight_hint"
+            android:inputType=""
+            tools:ignore="TextFields" />
 
-    <TextView
-        android:id="@+id/textSpeed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textCal"
-        android:layout_below="@+id/editCal"
-        android:layout_marginTop="52dp"
-        android:text="@string/expect_speed"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textCal"
+            android:layout_below="@+id/editCal"
+            android:layout_marginTop="21dp"
+            android:text="@string/expect_speed"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editSpeed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editCal"
-        android:layout_below="@+id/textSpeed"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
+        <EditText
+            android:id="@+id/editSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editCal"
+            android:layout_below="@+id/textSpeed"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="@string/speed_unit"
+            android:layout_weight="0"
+            tools:ignore="LabelFor" />
 
-    <TextView
-        android:id="@+id/textSpeedUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editSpeed"
-        android:layout_toEndOf="@+id/editSpeed"
-        android:text="@string/speed_unit"
-        android:textSize="18sp" />
+        <Button
+            android:id="@+id/buttonRun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:onClick="onRun"
+            android:layout_weight="0"
+            android:text="@string/run" />
 
-    <Button
-        android:id="@+id/buttonRun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onRun"
-        android:text="@string/run"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+             />
+
+    </LinearLayout>
+
 </RelativeLayout>
