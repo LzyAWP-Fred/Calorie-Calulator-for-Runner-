@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/textView"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:text="@string/gongxi"
             android:gravity="center"
-            android:textSize="38dp"
+            android:textSize="38sp"
             android:textColor="@android:color/background_light"/>
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/finish"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@android:color/background_light"/>
 
         <TextView
@@ -40,14 +40,14 @@
             android:layout_marginTop="21dp"
             android:textColor="@android:color/background_light"
             android:gravity="center"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_marginTop="21dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="@string/runn"
             android:textColor="@android:color/background_light"/>
 
@@ -55,16 +55,16 @@
             android:id="@+id/distance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:textColor="@android:color/background_light"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_marginTop="21dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="@string/use"
             android:textColor="@android:color/background_light"/>
 
@@ -72,9 +72,9 @@
             android:id="@+id/cal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:textColor="@android:color/background_light"
-            android:textSize="22dp" />
+            android:textSize="22sp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -82,13 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/gj"
-            android:layout_weight="0.64" />
-
-        <TextView
-            android:id="@+id/em"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_weight="1" />
+
     </LinearLayout>
 </RelativeLayout>
 
