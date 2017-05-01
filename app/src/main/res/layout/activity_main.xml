@@ -1,116 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
+tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity"
+    android:background="@color/MSUGreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_vertical"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="15sp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20sp">
 
         <TextView
             android:id="@+id/textName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editName"
-            android:layout_alignBottom="@+id/editName"
             android:layout_marginEnd="24dp"
-            android:layout_toStartOf="@+id/editName"
             android:text="@string/name"
             android:textSize="18sp"
-            tools:ignore="RelativeOverlap" />
+            tools:ignore="RelativeOverlap"
+            android:textColor="@android:color/background_light" />
 
         <EditText
             android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="@string/name_hint"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:background="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/textCal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textWeight"
-            android:layout_below="@+id/textWeight"
-            android:layout_marginTop="31dp"
+            android:layout_marginTop="21dp"
             android:text="@string/cal"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light" />
 
         <EditText
             android:id="@+id/editCal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/cal_unit"
-            android:layout_alignStart="@+id/editWeight"
-            android:layout_below="@+id/textCal"
             android:ems="10"
             android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/textWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editName"
             android:layout_marginTop="21dp"
-            android:layout_toStartOf="@+id/editWeight"
             android:text="@string/weight"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light" />
 
         <EditText
             android:id="@+id/editWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textWeight"
-            android:layout_alignBottom="@+id/textWeight"
-            android:layout_alignStart="@+id/editName"
             android:ems="10"
             android:hint="@string/weight_hint"
             android:inputType=""
-            tools:ignore="TextFields" />
+            tools:ignore="TextFields"
+            android:background="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/textSpeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textCal"
-            android:layout_below="@+id/editCal"
             android:layout_marginTop="21dp"
             android:text="@string/expect_speed"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light" />
 
         <EditText
             android:id="@+id/editSpeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/editCal"
-            android:layout_below="@+id/textSpeed"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="@string/speed_unit"
             android:layout_weight="0"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:background="@android:color/background_light"/>
 
         <Button
             android:id="@+id/buttonRun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
             android:onClick="onRun"
-            android:layout_weight="0"
-            android:text="@string/run" />
+            android:text="@string/run"
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:id="@+id/empty"
