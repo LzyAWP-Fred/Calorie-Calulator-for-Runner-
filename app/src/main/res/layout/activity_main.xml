@@ -35,23 +35,38 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity"
             android:background="@android:color/background_light"/>
 
         <TextView
-            android:id="@+id/textCal"
+            android:id="@+id/textGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:layout_marginTop="21dp"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/textHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
-            android:text="@string/cal"
+            android:text="@string/height"
             android:textSize="18sp"
             android:textColor="@android:color/background_light" />
 
         <EditText
-            android:id="@+id/editCal"
+            android:id="@+id/editHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cal_unit"
+            android:background="@android:color/background_light"
             android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor"
-            android:background="@android:color/background_light"/>
+            android:hint="@string/height_hint"
+            android:inputType="numberDecimal"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textWeight"
@@ -68,9 +83,27 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/weight_hint"
-            android:inputType=""
+            android:inputType="numberDecimal"
             tools:ignore="TextFields"
             android:background="@android:color/background_light"/>
+
+        <TextView
+            android:id="@+id/textAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:layout_marginTop="21dp"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="number"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textSpeed"
@@ -86,7 +119,7 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:hint="@string/speed_unit"
             android:layout_weight="0"
             tools:ignore="LabelFor"
@@ -96,9 +129,9 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity"
             android:id="@+id/buttonRun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:onClick="onRun"
-            android:text="@string/run"
-            android:layout_marginTop="20dp"/>
+            android:text="@string/run" />
 
         <TextView
             android:id="@+id/empty"

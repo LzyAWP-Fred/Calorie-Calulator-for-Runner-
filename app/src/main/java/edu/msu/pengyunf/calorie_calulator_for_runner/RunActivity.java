@@ -28,11 +28,12 @@ public class RunActivity extends AppCompatActivity {
     private double inital_longitude = 0;
     private float[] distance = new float[1];
     private double cal = 0;
-    private Location location;
     private double user_enter_weight = 0;
     private LocationManager locationManager = null;
-    private double goalCal = 0;
     private String username = "";
+    private String gender;
+    private double age;
+    private double height;
 
     private ActiveListener activeListener = new ActiveListener();
 
@@ -49,10 +50,14 @@ public class RunActivity extends AppCompatActivity {
 
         // Force the screen to say on and bright
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        goalCal = getIntent().getDoubleExtra("cal",0);
         expectSpeed = getIntent().getDoubleExtra("speed",0);
         user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
         username = getIntent().getStringExtra("user");
+        age = getIntent().getDoubleExtra("age",0);
+        height = getIntent().getDoubleExtra("height",0);
+        gender = getIntent().getStringExtra("gender");
+
+
         //System.out.println("callll" + ));
 
         distance[0] = 0;
@@ -63,8 +68,8 @@ public class RunActivity extends AppCompatActivity {
 
 
 // expect time = cal / 1.036 / weight / speed
-    private int expecTime(double goalCal, double expectSpeed, double user_enter_weight) {
-        double time = goalCal / 1.036 / user_enter_weight * 1000 / expectSpeed / 60;
+    private int expecTime(double expectSpeed, double user_enter_weight) {
+        double time = calculateExpectedCal() / 1.036 / user_enter_weight * 1000 / expectSpeed / 60;
         return (int)time; // mins
     }
 
@@ -74,12 +79,14 @@ public class RunActivity extends AppCompatActivity {
         //TextView lat = (TextView)findViewById(R.id.textLat);
         //TextView log = (TextView)findViewById(R.id.textLong);
         TextView expect = (TextView)findViewById(R.id.expectTime);
-        String tempp = String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight))+" minutes";
+        TextView DistanceRemaining = (TextView)findViewById(R.id.textDistanceRemainshow);
+        String tempp = String.valueOf(expecTime(expectSpeed, user_enter_weight))+" minutes";
         expect.setText(tempp);
         TextView dis = (TextView)findViewById(R.id.textDistance);
         TextView caltext = (TextView)findViewById(R.id.textcalutedcal);
         //lat.setText(String.valueOf(inital_latitude));
         //log.setText(String.valueOf(inital_longitude));
+        DistanceRemaining.setText(String.valueOf(calucateDistanceRemain() + " m"));
         String temp2 = String.valueOf(distance[0]) + " m";
         dis.setText(temp2);
         String temp3 = String.valueOf(cal) + " kcal";
@@ -110,6 +117,10 @@ public class RunActivity extends AppCompatActivity {
         Location.distanceBetween(inital_latitude,inital_longitude,latitude,longitude,result);
         return result;
     }
+    private double calucateDistanceRemain()
+    {
+        return ((calculateExpectedCal()/user_enter_weight/1.036*1000)-distance[0]);
+    }
     // 跑步热量（kcal）＝体重（kg）×距离（公里）×1.036
     private double calculateCal()
     {
@@ -133,7 +144,7 @@ public class RunActivity extends AppCompatActivity {
 
         if(bestAvailable != null) {
             try{
-                locationManager.requestLocationUpdates(bestAvailable, 5, 5, activeListener);
+                locationManager.requestLocationUpdates(bestAvailable, 5000, 5, activeListener);
                 Location location = locationManager.getLastKnownLocation(bestAvailable);
                 if(inital_latitude==0 && inital_longitude==0)
                 {
@@ -183,10 +194,9 @@ public class RunActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "PLEASE DO NOT USE THIS APP WHILE NOT RUNNING", Toast.LENGTH_SHORT).show();
             }
-
-            System.out.println("Cal: " + cal + " goal cal: " + goalCal);
+            System.out.println("Cal: " + cal + " goal cal: " + calculateExpectedCal());
             // go to result
-            if (finish(cal, goalCal)) {
+            if (finish(cal)) {
                 Intent k = new Intent(RunActivity.this,ResultActivity.class);
                 k.putExtra("distancee",distance[0]);
                 k.putExtra("call",cal);
@@ -227,11 +237,23 @@ public class RunActivity extends AppCompatActivity {
         }
     }
 
-    private boolean finish(double cal, double goalCal) {
-        if (cal >= goalCal) {
+    private boolean finish(double cal) {
+        if (cal >= calculateExpectedCal()) {
             return true;
         } else {
             return false;
+        }
+    }
+
+    private double calculateExpectedCal()
+    {
+        if(gender.equals("Male"))
+        {
+            return (66+1.38*user_enter_weight+5*height-6.8*age)*1.2;
+        }
+        else
+        {
+            return ((655+9.6*user_enter_weight+1.9*height-4.7*age))*1.2;
         }
     }
 

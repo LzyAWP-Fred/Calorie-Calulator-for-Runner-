@@ -49,6 +49,23 @@
             android:textColor="@android:color/background_light"/>
 
         <TextView
+            android:id="@+id/textDistanceRemain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/distanceremaining"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDistanceRemainshow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text=""
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+        <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,13 +87,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="303dp"
-            app:srcCompat="@mipmap/runer"
-            android:layout_marginBottom="15sp"/>
 
     </LinearLayout>
 
