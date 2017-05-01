@@ -37,6 +37,7 @@ public class RunActivity extends AppCompatActivity {
     private ActiveListener activeListener = new ActiveListener();
 
     private double speed = 0;
+    private double expectSpeed = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +50,21 @@ public class RunActivity extends AppCompatActivity {
         // Force the screen to say on and bright
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         goalCal = getIntent().getDoubleExtra("cal",0);
+        expectSpeed = getIntent().getDoubleExtra("speed",0);
+        user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
         username = getIntent().getStringExtra("user");
-        System.out.println("callll" + username);
+        System.out.println("callll" + String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight)));
 
         distance[0] = 0;
         registerListeners();
         setUI();
 
+    }
+
+// expect time = cal / 1.036 / weight / speed
+    private int expecTime(double goalCal, double expectSpeed, double user_enter_weight) {
+        double time = goalCal / 1.036 / user_enter_weight * 1000 / expectSpeed / 60;
+        return (int)time; // mins
     }
 
 
@@ -97,7 +106,6 @@ public class RunActivity extends AppCompatActivity {
     }
     private double calculateCal()
     {
-        user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
         return 0.001*distance[0]*user_enter_weight*1.036;
     }
 

@@ -13,7 +13,7 @@ tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.MainActivity">
         android:gravity="center_vertical"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15sp">
 
         <TextView
             android:id="@+id/textName"
