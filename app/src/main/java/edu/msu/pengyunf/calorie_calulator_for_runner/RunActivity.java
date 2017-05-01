@@ -53,7 +53,7 @@ public class RunActivity extends AppCompatActivity {
         expectSpeed = getIntent().getDoubleExtra("speed",0);
         user_enter_weight = getIntent().getDoubleExtra("user_weight",0);
         username = getIntent().getStringExtra("user");
-        System.out.println("callll" + String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight)));
+        //System.out.println("callll" + ));
 
         distance[0] = 0;
         registerListeners();
@@ -70,14 +70,16 @@ public class RunActivity extends AppCompatActivity {
 
     private void setUI()
     {
-        TextView lat = (TextView)findViewById(R.id.textLat);
-        TextView log = (TextView)findViewById(R.id.textLong);
+        //TextView lat = (TextView)findViewById(R.id.textLat);
+        //TextView log = (TextView)findViewById(R.id.textLong);
+        TextView expect = (TextView)findViewById(R.id.expectTime);
+        expect.setText(String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight))+" minutes");
         TextView dis = (TextView)findViewById(R.id.textDistance);
         TextView caltext = (TextView)findViewById(R.id.textcalutedcal);
-        lat.setText(String.valueOf(inital_latitude));
-        log.setText(String.valueOf(inital_longitude));
-        dis.setText(String.valueOf(distance[0]));
-        caltext.setText(String.valueOf(cal));
+        //lat.setText(String.valueOf(inital_latitude));
+        //log.setText(String.valueOf(inital_longitude));
+        dis.setText(String.valueOf(distance[0]) + " m");
+        caltext.setText(String.valueOf(cal) + " kcal");
     }
 
     @Override
