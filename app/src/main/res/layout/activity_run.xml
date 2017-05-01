@@ -6,40 +6,35 @@
     android:layout_height="match_parent"
     tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.RunActivity">
 
-    <TextView
-        android:id="@+id/textLat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="@string/dummy" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textLong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textLat"
-        android:layout_below="@+id/textLat"
-        android:layout_marginTop="20dp"
-        android:text="@string/dummy" />
+        <TextView
+            android:id="@+id/textDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textLong"
+            android:layout_below="@+id/textLong"
+            android:layout_marginTop="37dp"
+            android:text="@string/dummy" />
 
-    <TextView
-        android:id="@+id/textDistance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textLong"
-        android:layout_below="@+id/textLong"
-        android:layout_marginTop="37dp"
-        android:text="@string/dummy" />
+        <TextView
+            android:id="@+id/textcalutedcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textDistance"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="38dp"
+            android:text="@string/dummy" />
 
-    <TextView
-        android:id="@+id/textcalutedcal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textDistance"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:text="@string/dummy" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/runer" />
+    </LinearLayout>
+
 </RelativeLayout>
 
