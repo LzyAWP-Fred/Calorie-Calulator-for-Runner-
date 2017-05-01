@@ -3,8 +3,8 @@
     <string name="name">Name:</string>
     <string name="name_hint">Enter your name</string>
     <string name="weight">Weight (kg):</string>
-    <string name="weight_hint">Enter your weight (kg)</string>
-    <string name="cal">Enter expected consume calories (Cal):</string>
+    <string name="weight_hint">Enter your weight</string>
+    <string name="cal">Enter expected consume calories (kcal):</string>
     <string name="cal_unit">kcal</string>
     <string name="expect_speed">Expected speed (m/s):</string>
     <string name="speed_unit">m/s</string>
@@ -14,4 +14,7 @@
     <string name="finish">You finished your plan!</string>
     <string name="runn">You ran</string>
     <string name="use">And used </string>
+    <string name="expect">Expect Time:</string>
+    <string name="currentd">Current Distance:</string>
+    <string name="cb">Calories Burned:</string>
 </resources>

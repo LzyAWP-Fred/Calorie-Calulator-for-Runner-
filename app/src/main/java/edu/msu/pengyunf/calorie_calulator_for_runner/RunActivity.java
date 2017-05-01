@@ -61,6 +61,7 @@ public class RunActivity extends AppCompatActivity {
 
     }
 
+
 // expect time = cal / 1.036 / weight / speed
     private int expecTime(double goalCal, double expectSpeed, double user_enter_weight) {
         double time = goalCal / 1.036 / user_enter_weight * 1000 / expectSpeed / 60;
@@ -73,13 +74,16 @@ public class RunActivity extends AppCompatActivity {
         //TextView lat = (TextView)findViewById(R.id.textLat);
         //TextView log = (TextView)findViewById(R.id.textLong);
         TextView expect = (TextView)findViewById(R.id.expectTime);
-        expect.setText(String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight))+" minutes");
+        String tempp = String.valueOf(expecTime(goalCal, expectSpeed, user_enter_weight))+" minutes";
+        expect.setText(tempp);
         TextView dis = (TextView)findViewById(R.id.textDistance);
         TextView caltext = (TextView)findViewById(R.id.textcalutedcal);
         //lat.setText(String.valueOf(inital_latitude));
         //log.setText(String.valueOf(inital_longitude));
-        dis.setText(String.valueOf(distance[0]) + " m");
-        caltext.setText(String.valueOf(cal) + " kcal");
+        String temp2 = String.valueOf(distance[0]) + " m";
+        dis.setText(temp2);
+        String temp3 = String.valueOf(cal) + " kcal";
+        caltext.setText(temp3);
     }
 
     @Override
@@ -106,6 +110,7 @@ public class RunActivity extends AppCompatActivity {
         Location.distanceBetween(inital_latitude,inital_longitude,latitude,longitude,result);
         return result;
     }
+    // 跑步热量（kcal）＝体重（kg）×距离（公里）×1.036
     private double calculateCal()
     {
         return 0.001*distance[0]*user_enter_weight*1.036;
@@ -180,6 +185,7 @@ public class RunActivity extends AppCompatActivity {
             }
 
             System.out.println("Cal: " + cal + " goal cal: " + goalCal);
+            // go to result
             if (finish(cal, goalCal)) {
                 Intent k = new Intent(RunActivity.this,ResultActivity.class);
                 k.putExtra("distancee",distance[0]);

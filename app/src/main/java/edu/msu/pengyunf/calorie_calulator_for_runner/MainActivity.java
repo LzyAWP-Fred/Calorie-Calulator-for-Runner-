@@ -15,9 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    // run button
     public void onRun(View view){
-
         EditText name = (EditText) findViewById(R.id.editName);
         EditText cal = (EditText) findViewById(R.id.editCal);
         EditText speed = (EditText) findViewById(R.id.editSpeed);

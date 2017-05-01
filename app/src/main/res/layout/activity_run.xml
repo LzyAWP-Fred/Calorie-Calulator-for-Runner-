@@ -4,54 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.RunActivity">
+    tools:context="edu.msu.pengyunf.calorie_calulator_for_runner.RunActivity"
+    android:background="@color/MSUGreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25sp">
 
         <TextView
-            android:id="@+id/textLat"
+            android:id="@+id/expect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
-            android:text="@string/dummy" />
+            android:text="@string/expect"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_light"/>
 
         <TextView
-            android:id="@+id/textLong"
+            android:id="@+id/expectTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textLat"
-            android:layout_below="@+id/textLat"
-            android:layout_marginTop="20dp"
-            android:text="@string/dummy" />
+            android:gravity="end"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/dis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/currentd"
+            android:textSize="18sp"
+            android:layout_marginTop="15sp"
+            android:textColor="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/textDistance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textLong"
-            android:layout_below="@+id/textLong"
-            android:layout_marginTop="37dp"
-            android:text="@string/dummy" />
+            android:textSize="24sp"
+            android:gravity="end"
+            android:textColor="@android:color/background_light"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cb"
+            android:textSize="18sp"
+            android:layout_marginTop="15sp"
+            android:textColor="@android:color/background_light"/>
 
         <TextView
             android:id="@+id/textcalutedcal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textDistance"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp"
-            android:text="@string/dummy" />
+            android:textSize="24sp"
+            android:gravity="end"
+            android:textColor="@android:color/background_light"/>
 
-        <ImageView
-            android:id="@+id/imageView"
+        <TextView
+            android:id="@+id/emppty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/runer" />
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="303dp"
+            app:srcCompat="@mipmap/runer"
+            android:layout_marginBottom="15sp"/>
+
     </LinearLayout>
 
 </RelativeLayout>
