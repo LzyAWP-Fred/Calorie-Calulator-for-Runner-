@@ -36,20 +36,32 @@ public class MainActivity extends AppCompatActivity {
             double speedy = Double.parseDouble(speed.getText().toString());
             double final_age = Double.parseDouble(age.getText().toString());
             double final_height = Double.parseDouble(Height.getText().toString());
+            if (check0(weight) && check0(speedy) && check0(final_age) && check0(final_height)) {
+                Intent intent = new Intent(this,RunActivity.class);
+                intent.putExtra("gender",Gender_select);
+                intent.putExtra("user_weight",weight);
+                intent.putExtra("height",final_height);
+                intent.putExtra("age",final_age);
+                intent.putExtra("speed",speedy);
+                intent.putExtra("user", namee);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), "NUMBER YOU INPUTED IS NOT CORRECT", Toast.LENGTH_SHORT).show();
+            }
 
-            Intent intent = new Intent(this,RunActivity.class);
-            intent.putExtra("gender",Gender_select);
-            intent.putExtra("user_weight",weight);
-            intent.putExtra("height",final_height);
-            intent.putExtra("age",final_age);
-            intent.putExtra("speed",speedy);
-            intent.putExtra("user", namee);
-
-            startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), "PLEASE FILL IN ALL THE BLANKS", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public boolean check0(double num) {
+        if (num == 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
 }

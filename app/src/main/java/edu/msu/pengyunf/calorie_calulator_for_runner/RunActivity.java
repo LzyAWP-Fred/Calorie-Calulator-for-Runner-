@@ -86,7 +86,8 @@ public class RunActivity extends AppCompatActivity {
         TextView caltext = (TextView)findViewById(R.id.textcalutedcal);
         //lat.setText(String.valueOf(inital_latitude));
         //log.setText(String.valueOf(inital_longitude));
-        DistanceRemaining.setText(String.valueOf(calucateDistanceRemain() + " m"));
+        String temppp = String.format("%1.2f",calucateDistanceRemain());
+        DistanceRemaining.setText(temppp + " m");
         String temp2 = String.valueOf(distance[0]) + " m";
         dis.setText(temp2);
         String temp3 = String.valueOf(cal) + " kcal";
