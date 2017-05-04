@@ -1,4 +1,4 @@
-* Calorie Calulator for Runner
+* Calorie Calculator for Runner
 ** This our group member list:
 - Ziyan Long
 - Junshan Luo
